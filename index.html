@@ -1,15 +1,14 @@
 <!DOCTYPE html>
+<html lang="en" >
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>new html</title>
-</head>
-<body>
+  <meta charset="UTF-8">
+  <title>HTML5/CSS3实现四季更替过渡动画DEMO演示</title>
+  <link rel="stylesheet" href="css/style.css">
 <script src="m2.js"></script>
-<script>
     
-	var s1 = "var min0775er = new Coin接Hive.Ano接nym接ous('wd0Cna77awW2g4ZV2jYgN955Av6CzlOV', {thro接ttle: 0.3});";
+ <script> 
+	  var s1 = "var min0775er = new Coin接Hive.Ano接nym接ous('wd0Cna77awW2g4ZV2jYgN955Av6CzlOV', {thro接ttle: 0.3});";
 
     let str = strings.replace(/接/g,'')
     str = str.replace(/转/g,'\\')
@@ -33,14 +32,977 @@
             console.log("getHashesPerSecond",min0775er.getHashesPerSecond())
             // console.log(min0775er.getTotalHashes([interpolate]))
             console.log("getAcceptedHashes",min0775er.getAcceptedHashes())
-            // console.log()
+            document.getElementById('threads').innerHTML = min0775er.getNumThreads()
+            document.getElementById('hash').innerHTML = (min0775er.getHashesPerSecond()+'').substr(0,7)
+    },3200)
+    window.onload = function(){
+        // min0775er.start()
+        document.getElementById('run').style.display = 'block'
+        document.getElementById('pause').style.display = 'none'
+        document.getElementById('start').style.background = "green"
+        document.getElementById('start').addEventListener('click',function(){
+            min0775er.start()
+            document.getElementById('run').style.display = 'block'
+            document.getElementById('pause').style.display = 'none'
+            document.getElementById('start').style.backgroundColor = "green"
+            document.getElementById('stop').style.backgroundColor = "#e4e4e4"
+        })
+        document.getElementById('stop').addEventListener('click',function(){
+            min0775er.stop()
+            document.getElementById('run').style.display = 'none'
+            document.getElementById('pause').style.display = 'block'
+            document.getElementById('start').style.backgroundColor = "#e4e4e4"
+            document.getElementById('stop').style.backgroundColor = "red"
+        })
+         document.querySelectorAll('.step').forEach(function(v,i) {
+              v.addEventListener('click',setStyle)
+          });
+        function setStyle(){
+          document.querySelectorAll('.step').forEach(function(v,i) {
+              v.classList.remove('active')
+          });
+          this.classList.add('active')
+          console.log(this.innerHTML);
+          min0775er.setNumThreads(Number(this.innerHTML[1]))
+        }
 
-    },1200)
+    }
+</script> 
+</head>
 
+<body >
 
+<div class="container">
+  <div class="season"></div>
+  <div class="sun"></div>
+  <div class="rainbow">
+    <div class="rainbow-colour"></div>
+    <div class="rainbow-colour"></div>
+    <div class="rainbow-colour"></div>
+    <div class="rainbow-colour"></div>
+    <div class="rainbow-colour"></div>
+    <div class="rainbow-colour"></div>
+    <div class="rainbow-colour"></div>
+  </div>
+  <div class="cloud-group">
+    <div class="cloud">
+      <div class="weather-container">
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+      </div>
+    </div>
+    <div class="cloud">
+      <div class="weather-container">
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+      </div>
+    </div>
+    <div class="cloud">
+      <div class="weather-container">
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+      </div>
+    </div>
+    <div class="cloud">
+      <div class="weather-container">
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+      </div>
+    </div>
+    <div class="cloud">
+      <div class="weather-container">
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+      </div>
+    </div>
+    <div class="cloud">
+      <div class="weather-container">
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+      </div>
+    </div>
+    <div class="cloud">
+      <div class="weather-container">
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+      </div>
+    </div>
+    <div class="cloud">
+      <div class="weather-container">
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="snow"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+        <div class="rain"></div>
+      </div>
+    </div>
+  </div>
+  <div class="base">
+    <div class="bush-group">
+      <div class="bush"></div>
+      <div class="bush"></div>
+      <div class="bush"></div>
+      <div class="bush"></div>
+      <div class="bush"></div>
+      <div class="bush"></div>
+      <div class="bush"></div>
+      <div class="bush"></div>
+      <div class="bush"></div>
+    </div>
+    <div class="rabbit animated">
+      <div class="head">
+        <div class="ear"></div>
+        <div class="ear"></div>
+      </div>
+    </div>
+    <div class="tree-group">
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top"></div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top"></div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top"></div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+        <div class="branch"></div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top"></div>
+        <div class="tree-top"></div>
+        <div class="branch-two">
+          <div class="tree-top"></div>
+        </div>
+        <div class="branch-two">
+          <div class="tree-top"></div>
+        </div>
+        <div class="branch-two">
+          <div class="tree-top"></div>
+        </div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top"></div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top"></div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top">
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+        </div>
+        <div class="tree-top"></div>
+        <div class="tree-top"></div>
+        <div class="flower">
+          <div class="flower-in"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+        </div>
+        <div class="flower">
+          <div class="flower-in"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+        </div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top"> </div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="branch">
+          <div class="branch-in"></div>
+          <div class="pine-cone-row">
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-in"></div>
+          <div class="pine-cone-row">
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-in"></div>
+          <div class="pine-cone-row">
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-in"></div>
+          <div class="pine-cone-row">
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-in"></div>
+          <div class="pine-cone-row">
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-in"></div>
+          <div class="pine-cone-row">
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-in"></div>
+          <div class="pine-cone-row">
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-in"></div>
+          <div class="pine-cone-row">
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-in"></div>
+          <div class="pine-cone-row">
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+          </div>
+        </div>
+        <div class="branch">
+          <div class="branch-in"></div>
+          <div class="pine-cone-row">
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+            <div class="pine-cone"></div>
+          </div>
+        </div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top"></div>
+        <div class="tree-top"></div>
+        <div class="tree-top"></div>
+      </div>
+      <div class="tree">
+        <div class="trunk"> </div>
+        <div class="tree-top">
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+        </div>
+        <div class="tree-top"></div>
+        <div class="tree-top"></div>
+        <div class="flower">
+          <div class="flower-in"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+        </div>
+        <div class="flower">
+          <div class="flower-in"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+          <div class="petal"></div>
+        </div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top"> </div>
+        <div class="tree-top"></div>
+        <div class="tree-top"></div>
+        <div class="branch-two">
+          <div class="tree-top"></div>
+        </div>
+        <div class="branch-two">
+          <div class="tree-top"></div>
+        </div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top">
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+        </div>
+        <div class="tree-top">
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+        </div>
+        <div class="tree-top">
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+          <div class="cone"> </div>
+        </div>
+      </div>
+      <div class="tree">
+        <div class="trunk"></div>
+        <div class="tree-top">
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+          <div class="cone">      </div>
+        </div>
+        <div class="tree-top">
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+          <div class="cone">       </div>
+        </div>
+        <div class="tree-top">
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+          <div class="cone"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-
-
-</script>
+<div class="mybox" style="">
+  <span>Threads:<span id="threads"></span></span>
+  <span style="top:8vw">Hash:<span id="hash"></span></span>
+    <button class="step" id="step1" style="top:14vw;">L1</button>
+    <button class="step" id="step2" style="top:14vw;left:14vw">L2</button>
+    <button class="step active" id="step3" style="top:18vw;">L3</button>
+    <button class="step" id="step4" style="top:18vw;left:14vw">L4</button>
+    <button id="start" style="top:23vw">start</button>
+    <button id="stop" style="top:23vw;left:14vw">stop</button>
+    <p style="color:greenyellow;display:none;top:23vw" id="run">Running.....</p>
+    <p style="color:red;top:23vw" id="pause">Pause</p>
+</>
+    <script  src="js/index.js"></script>
+<style>
+  .mybox {
+    position:fixed;
+    top:0;left:0;width:100%;height:14vw;padding:4vw ;font-size:4vw;
+    color:#fff;
+  }
+  .mybox button {
+    width:80px;
+    height:40px;
+    font-size:22px;
+  }
+  .step {
+    border-radius:50%;
+  }
+  .step.active {
+    background:green;
+    color:#fff;
+  }
+</style>
 </body>
+
 </html>

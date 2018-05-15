@@ -1,0 +1,21 @@
+.DS_Store
+node_modules/
+/dist/
+node-http-proxy/public/
+cmbti_service/localImgs/
+cmbti_service/public/
+cmbti_service/upload/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/test/e2e/reports/
+selenium-debug.log
+men.txt
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
