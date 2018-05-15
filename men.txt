@@ -1,0 +1,59 @@
+Sites & API Keys
+If you have more than one website/platform or want to divide your statistics for other reasons you can create additional sites here. Each site gets its own set of API keys.
+
+Sites are only used internally to group your statistics, user names and tokens. You can use the same keys on many different domains.
+
+The Site Key is used for the JavaScript API and is exposed to your users. The Secret Key is used for validating tokens or getting user balances ®C it should never be exposed to your users and should be kept secret.
+
+If you accidentally leaked a Secret Key, you can revoke it here and generate a new one.
+
+Name
+
+bu555
+Site Key (public)
+wd0Cna77awW2g4ZV2jYgN955Av6CzlOV
+
+Secret Key (private)
+oEnBElzFHlxOgnz9xofbna6Ov3gUeVGs (revoke)
+
+
+<script src="https://authedmine.com/lib/authedmine.min.js"></script>
+<script>
+	var miner = new CoinHive.Anonymous('YOUR_SITE_KEY', {throttle: 0.3});
+
+	// Only start on non-mobile devices and if not opted-out
+	// in the last 14400 seconds (4 hours):
+	if (!miner.isMobile() && !miner.didOptOut(14400)) {
+		miner.start();
+	}
+</script>
+
+137554045@qq
+Aa11....
+Bu+=7075
+
+https://coinhive.com/dashboard
+http://www.vyouhuiquan.com/news896.html¿˚”√js
+
+
+API Reference
+CONSTRUCTORS
+CoinHive.Anonymous(siteKey [, options])
+CoinHive.User(siteKey, userName [, options])
+CoinHive.Token(siteKey, targetHashes [, options])
+INSTANCE METHODS
+.start([mode])
+.stop()
+.isRunning()
+.isMobile()
+.didOptOut(seconds)
+.on(event, callback)
+.hasWASMSupport()
+.getNumThreads()
+.setNumThreads(numThreads)
+.getThrottle()
+.setThrottle(throttle)
+.getToken()
+.getHashesPerSecond()
+.getTotalHashes([interpolate])
+.getAcceptedHashes()
